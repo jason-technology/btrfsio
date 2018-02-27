@@ -12,4 +12,6 @@ Need to add dependency checking for needed binaries, especially IOstat
 
 Need to identify a way to collect BTRFS label and device information natively.
 
+Mounts are now gathered from /proc directly rather than invoking mount
+
 
