@@ -10,11 +10,10 @@ IOStatOps+="2"
 
 #Test for prerequisites
 
-#return = subprocess.Popen(['command',options ], stdout = subprocess.PIPE).communicate()[0]
-
 #Rewrite to grab this info from /proc/mounts
-#mount = all mounted file systems
-mounts = subprocess.Popen('mount', stdout = subprocess.PIPE).communicate()[0]
+#mounts = all mounted file systems
+inFile = open("/proc/mounts","r")
+mounts = inFile.read()
 
 #btrfs_mounts = all mounted filesystems of type btrfs
 btrfs_mounts = re.findall('.+btrfs.+',mounts)
